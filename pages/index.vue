@@ -17,7 +17,7 @@
         <div class="text-center p-5 bg-gray-100 bordered rounded-lg mt-4 max-w-screen-sm m-auto">
 
           <label for="message">Pesan:</label>
-          <textarea id="message" rows="7" max="300" v-model="message" placeholder="Contoh: SAT dari FYP kapan keluarnya ya?" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+          <textarea :disabled="isLoading" id="message" rows="7" max="300" v-model="message" placeholder="Contoh: SAT dari FYP kapan keluarnya ya?" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
         disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
         invalid:border-pink-500 invalid:text-pink-600
@@ -25,7 +25,7 @@
           <div class="text-xs text-gray-400  mb-4 mt-1">Tidak perlu menggunakan kata kunci/trigger.</div>
 
           <label for="topic">Pilih Topik:</label>
-          <select id="topic" v-model="topic" v-bind:options="options" class="border rounded-lg px-4 py-2 mt-2 w-full" required>
+          <select :disabled="isLoading" id="topic" v-model="topic" v-bind:options="options" class="border rounded-lg px-4 py-2 mt-2 w-full" required>
             <option v-for="option in options" :key="option.value" :value="option.value" :selected="option.selected" :disabled="option.disabled">
               {{ option.text }}
             </option>
@@ -44,6 +44,7 @@
 </template>
 
 <script setup>
+    const config = useRuntimeConfig()
     let topic = ref("");
     let message = ref("");
     let isLoading = ref(false);
@@ -63,7 +64,7 @@
       };
       try {
         isLoading.value = true;
-        const response = await fetch('https://binusfess-api.kodex.id/api/v1/tweets', {
+        const response = await fetch(`${config.public.api_binusfess}/api/v1/tweets`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
