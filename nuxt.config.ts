@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            api_binusfess: process.env.BINUSFESS_API_URL || 'http://localhost:3001',
+            api_binusfess: process.env.NUXT_BINUSFESS_API_URL || 'http://localhost:3001',
         }
     },
     modules: [
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         [
             'nuxt-cloudflare-analytics',
             {
-              token: process.env.CLOUDFLARE_TOKEN,
+              token: process.env.NUXT_CLOUDFLARE_TOKEN,
             },
         ],
     ],
