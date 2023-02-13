@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            api_binusfess: process.env.NUXT_BINUSFESS_API_URL || 'http://localhost:3001',
+            api_binusfess: process.env.NUXT_PUBLIC_BINUSFESS_API_URL,
         }
     },
     modules: [

@@ -1,5 +1,8 @@
 <template>
     <div>
+        <head>
+            <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        </head>
         <header class="shadow-sm bg-black">
             <nav class="container mx-auto p-4 flex justify-between text-white">
                 <NuxtLink to="" class="font-bold">BINUS FESS</NuxtLink>
