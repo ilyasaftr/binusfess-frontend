@@ -44,7 +44,6 @@
 </template>
 
 <script setup>
-    const config = useRuntimeConfig()
     let topic = ref("");
     let message = ref("");
     let isLoading = ref(false);
@@ -64,7 +63,7 @@
       };
       try {
         isLoading.value = true;
-        const response = await fetch(`${config.public.api_binusfess}/api/v1/tweets`, {
+        const response = await fetch('https://binusfess-api.kodex.id/api/v1/tweets', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
