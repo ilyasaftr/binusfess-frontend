@@ -55,10 +55,6 @@
         { text: "OOT - Topik yang tidak relevan", value: "oot" },
     ]
 
-    useHead({
-      title: 'BINUS FESS',
-    })
-
     async function handleSubmit() {
       const menfessTopic = topic.value;
       const menfessMessage = message.value;

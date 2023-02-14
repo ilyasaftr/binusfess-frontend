@@ -13,7 +13,5 @@
     "@types/node": "^18.13.0",
     "nuxt": "^3.1.2"
   },
-  "dependencies": {
-    "nuxt-cloudflare-analytics": "^1.0.8"
-  }
+  "dependencies": {}
 }
