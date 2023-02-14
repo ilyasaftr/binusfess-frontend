@@ -8,6 +8,7 @@
         <div class="font-bold text-lg text-center mb-2">Rules</div>
           <ol>
             <li class="text-red-800">🚫 Dilarang mengirim pesan rasis, hoax atau hal-hal yang merugikan orang lain.</li>
+            <li class="text-red-800">🚫 Dilarang mengunggah konten promosi tanpa izin dari pihak admin.</li>
             <li>✅ Pastikan sudah follow <a class="font-bold" rel="me" target="_blank" href="https://twitter.com/binus_fess">@binus_fess</a> di Twitter </li>
             <li>✅ Aktif membantu menjawab menfess!</li>
           </ol>
