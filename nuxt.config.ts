@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     },
     modules: [
         '@nuxtjs/tailwindcss',
+        'nuxt-security',
     ],
+    security: {},
     app: {
         head : {
             title: 'BINUS FESS',

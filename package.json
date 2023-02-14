@@ -13,5 +13,7 @@
     "@types/node": "^18.13.0",
     "nuxt": "^3.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nuxt-security": "^0.10.2"
+  }
 }
