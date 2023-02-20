@@ -55,6 +55,7 @@
         { text: "Struggle - Ceritakan semua permasalahanmu atau kesulitanmu", value: "struggle" },
         { text: "OOT - Topik yang tidak relevan", value: "oot" },
     ]
+    const swal = inject("$swal");
 
     async function handleSubmit() {
       const menfessTopic = topic.value;
@@ -74,18 +75,27 @@
         });
         const data = await response.json();
         if (data.status === true) {
-          alert(data.message);
+          swal.fire({
+              title: data.message,
+              icon: 'success',
+          });
           topic.value = "";
           message.value = "";
           isLoading.value = false;
           return;
         } else {
-          alert(data.message);
+          swal.fire({
+              title: data.message,
+              icon: 'error',
+          });
           isLoading.value = false;
           return;
         }
       } catch (err) {
-        alert(err);
+          swal.fire({
+              title: err.message,
+              icon: 'error',
+          });
         isLoading.value = false;
         return;
       }
